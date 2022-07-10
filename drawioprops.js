@@ -6,7 +6,7 @@ Draw.loadPlugin(function(ui) {
 	var div = document.createElement('div');
 	div.style.background = Editor.isDarkMode() ? Editor.darkColor : '#ffffff';
 	div.style.border = '1px solid gray';
-	div.style.opacity = '0.8';
+	div.style.opacity = '1';
 	div.style.padding = '10px';
 	div.style.paddingTop = '0px';
 	div.style.width = '20%';
@@ -16,7 +16,7 @@ Draw.loadPlugin(function(ui) {
 	
 	if (!ui.editor.isChromelessView())
 	{
-		div.style.boxSizing = 'border-box';
+	/*	div.style.boxSizing = 'border-box';
 		div.style.minHeight = '100%';
 		div.style.width = '100%';
 
@@ -47,7 +47,13 @@ Draw.loadPlugin(function(ui) {
 			oldFunct.apply(this, arguments);
 			
 			ui.menus.addMenuItems(menu, ['-', 'extractData'], parent);
-		};
+		};*/
+		div.style.position = 'absolute';
+		div.style.minWidth = '200px';
+		div.style.top = '40px';
+		div.style.right = '20px';
+
+		document.body.appendChild(div);
 	}
 	else
 	{
